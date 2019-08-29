@@ -13,61 +13,45 @@ namespace EquiposBeisbol
         {
             List<Equipo> equipos = new List<Equipo>();
 
-            Equipo equipo1 = new Equipo("Equipo 1", "Mexico");
-            Equipo equipo2 = new Equipo("Equipo 2", "Estados Unidos");
+            Equipo equipo1 = new Equipo("Equipo 1");
+			equipo1.Entrenador = "Hector";
+			equipo1.CiudadOrigen = "Ciudad Obregon";
 
-            equipos.Add(equipo1);
-            equipos.Add(equipo2);
+			equipo1.Jugadores.Add(new Jugador("Homero",64));
+			equipo1.Jugadores.Add(new Jugador("Pedro",65 ));
+			equipo1.Jugadores.Add(new Jugador("Omar",78 ));
+			equipo1.Jugadores.Add(new Jugador("Cesar",10 ));
+			equipo1.Jugadores.Add(new Jugador("Olguins",26 ));
+			equipo1.Jugadores.Add(new Jugador("Peter",25));
+			equipo1.Jugadores.Add(new Jugador("Fernando",7 ));
+			equipo1.Jugadores.Add(new Jugador("Eddy",11 ));
+			equipo1.Jugadores.Add(new Jugador("Carlos",1 ));
 
-            Jugador Jeiv = new Jugador("Jeiv", "Brazil");
-            Jugador Homero = new Jugador("Homero", "Inglaterra");
-            Jugador Omar = new Jugador("Omar", "Mexico");
-            Jugador Pedro = new Jugador("Pedro", "Estados Unidos");
-            Jugador Alberto = new Jugador("Alberto", "Portugal");
-            Jugador Alexis = new Jugador("Alexis", "Inglaterra");
-            Jugador Luis = new Jugador("Luis", "Mexico");
-            Jugador Wilfredo = new Jugador("Wilfredo", "Estados Unidos");
-            Jugador Max = new Jugador("Max", "Portugal");
-            Jugador Victor = new Jugador("Victor", "Mexico");
-            Jugador Bryant = new Jugador("Bryant", "Colombia");
-            Jugador Fernando= new Jugador("Fernando", "España");
-            Jugador Ivan = new Jugador("Ivan", "Estados Unidos");
-            Jugador Carlos = new Jugador("Carlos", "Portugal");
-            Jugador Olguins = new Jugador("Olguins", "Estados Unidos");
-            Jugador Peter = new Jugador("Peter", "Estados Unidos");
-            Jugador Cesar = new Jugador("Cesar", "España");
-            Jugador Eddy = new Jugador("Eddy", "Inglaterra");
+			Equipo equipo2 = new Equipo("Equipo 2 ");
+			equipo2.Entrenador = "Mauricio";
+			equipo2.CiudadOrigen = "Ciudad de México";
 
-            equipo1.Jugadores.Add(Homero);
-            equipo1.Jugadores.Add(Pedro);
-            equipo1.Jugadores.Add(Omar);
-            equipo1.Jugadores.Add(Cesar);
-            equipo1.Jugadores.Add(Olguins);
-            equipo1.Jugadores.Add(Peter);
-            equipo1.Jugadores.Add(Fernando);
-            equipo1.Jugadores.Add(Eddy);
-            equipo1.Jugadores.Add(Carlos);
+			equipo2.Jugadores.Add(new Jugador("Jeiv", 19));
+			equipo2.Jugadores.Add(new Jugador("Alberto", 3));
+			equipo2.Jugadores.Add(new Jugador("Alexis", 55));
+			equipo2.Jugadores.Add(new Jugador("Luis", 42));
+			equipo2.Jugadores.Add(new Jugador("Wilfredo", 32));
+			equipo2.Jugadores.Add(new Jugador("Max", 13));
+			equipo2.Jugadores.Add(new Jugador("Victor", 47));
+			equipo2.Jugadores.Add(new Jugador("Bryant", 61));
+			equipo2.Jugadores.Add(new Jugador("Ivan", 30));
 
-            equipo2.Jugadores.Add(Jeiv);
-            equipo2.Jugadores.Add(Alberto);
-            equipo2.Jugadores.Add(Alexis);
-            equipo2.Jugadores.Add(Luis);
-            equipo2.Jugadores.Add(Wilfredo);
-            equipo2.Jugadores.Add(Max);
-            equipo2.Jugadores.Add(Victor);
-            equipo2.Jugadores.Add(Bryant);
-            equipo2.Jugadores.Add(Ivan);
+			equipos.Add(equipo1);
+			equipos.Add(equipo2);
 
-            foreach (Equipo grupo in equipos)
+            foreach (Equipo equipo in equipos)
             {
-                Console.WriteLine("Equipo: " + grupo.Equipos);
-                Console.WriteLine("Nombre: " + grupo.Nombre);
-                Console.WriteLine("Entrenador: " + grupo.Entrenador);
-                Console.WriteLine("Lista de jugadores: " + grupo.Jugadores);
+                Console.WriteLine("Equipo: " + equipo.Nombre + " de " + equipo.CiudadOrigen);
+                Console.WriteLine("Lista de jugadores: ");
 
-                foreach (Jugador alumno in grupo.Jugadores)
+                foreach (Jugador jugador in equipo.Jugadores)
                 {
-                    Console.WriteLine("*" + Equipo.Nombre);
+                    Console.WriteLine("*" + jugador.Nombre + " " + jugador.Numero);
                 }
             }
 
